@@ -123,10 +123,9 @@
   seboolean: name=virt_use_nfs state=yes persistent=yes
   when: ansible_selinux and ansible_selinux.status == "enabled"
 
-# TODO(tsedovic): disabled to test different network configurations
-#- name: Start and enable node
-#  service: name={{ openshift.common.service_type }}-node enabled=yes state=started
-#  register: start_result
+- name: Start and enable node
+  service: name={{ openshift.common.service_type }}-node enabled=yes
+  register: start_result
 
 - name: pause to prevent service restart from interfering with bootstrapping
   pause: seconds=30
