@@ -15,4 +15,4 @@
   connection: ssh
   gather_facts: no
   tasks:
-    - service: name={{ service_type }}-node state="enabled"
+    - service: name={{ service_type }}-node enabled=yes
