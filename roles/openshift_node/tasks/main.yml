@@ -124,7 +124,7 @@
   when: ansible_selinux and ansible_selinux.status == "enabled"
 
 - name: Start and enable node
-  service: name={{ openshift.common.service_type }}-node enabled=yes
+  service: name={{ openshift.common.service_type }}-node enabled=no
   register: start_result
 
 - name: pause to prevent service restart from interfering with bootstrapping
