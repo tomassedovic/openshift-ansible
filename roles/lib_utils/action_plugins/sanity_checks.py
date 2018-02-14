@@ -13,6 +13,7 @@ VALID_DEPLOYMENT_TYPES = ('origin', 'openshift-enterprise')
 # Tuple of variable names and default values if undefined.
 NET_PLUGIN_LIST = (('openshift_use_openshift_sdn', True),
                    ('openshift_use_flannel', False),
+                   ('openshift_use_kuryr', False),
                    ('openshift_use_nuage', False),
                    ('openshift_use_contiv', False),
                    ('openshift_use_calico', False))
