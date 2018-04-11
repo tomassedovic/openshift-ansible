@@ -52,10 +52,24 @@
     - master
     - node
     - .config_managed
+  - debug: msg="pre openshift_facts role"
+  - debug: var=openshift_master_api_url
+  - debug: var=openshift_master_console_url
+  - debug: var=api_url
+  - debug: var=console_url
+  - debug: var=openshift.master.api_url
+  - debug: var=openshift.master.console_url
 
   roles:
   - openshift_facts
   post_tasks:
+  - debug: msg="post openshift_facts role"
+  - debug: var=openshift_master_api_url
+  - debug: var=openshift_master_console_url
+  - debug: var=api_url
+  - debug: var=console_url
+  - debug: var=openshift.master.api_url
+  - debug: var=openshift.master.console_url
   - openshift_facts:
       role: master
       local_facts:

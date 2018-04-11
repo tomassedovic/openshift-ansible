@@ -184,6 +184,11 @@
   - fail:
       msg: Node start failed.
 
+- debug: msg="inside openshift_control_plane role"
+- debug: var=openshift.master.api_url
+- debug: var=openshift.master.console_url
+
+
 - name: Verify that the control plane is running
   command: >
     curl -k {{ openshift.master.api_url }}/healthz/ready
